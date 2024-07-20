@@ -31,3 +31,24 @@ function loadDeviceSpecificContent() {
 }
 
 window.onload = loadDeviceSpecificContent;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const projects = document.querySelectorAll('.project');
+
+    const options = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    projects.forEach(project => {
+        observer.observe(project);
+    });
+});
