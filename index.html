@@ -1,59 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Kanav Gathe</title>
+    <title>Kanav Gathe | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <script src="./script/script.js"></script>
-    <header class="slide delay-1">
-        <div class="name">
-            <span>Kanav Gathe</span>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Kanav Gathe</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <a href="/about.html"><span>About</span></a>
-        </nav>
     </header>
-    <div class="container slide delay-2" id="Page1container">
-        <div class="intro">
-            <h1>Fullstack Developer & DevOps Enthusiast</h1>
-            <p>Hi, I'm Kanav Gathe! I recently completed my Bachelor's in Engineering in Computer Science and Engineering in July 2023. I have a strong passion for MERN Fullstack development and DevOps. Currently, I'm focusing on honing my skills in React and Express while working as a freelance web developer. I create simple, functional websites for those in need and aspire to secure a role in DevOps or Fullstack development. Explore my projects and get in touch to learn more about my work and how I can contribute to your team.</p>
-        </div>
-        <div class="title">
-            <h1>Featured Projects</h1>
-        </div>
-        <div class="projects">
-            <div class="project slide delay-3">
-                <img src="./stock/photo.webp" alt="Project Image">
-                <a href="#"><h3>Project Title 01</h3></a>
-                <p>This is where the project description goes. Give an overview or go in depth - what it's all about, what inspired you, how you created it, or anything else you'd like visitors to know. To add Project descriptions, go to Manage Projects.</p>
-            </div>
-            <div class="project slide delay-4">
-                <img src="./stock/photo.webp" alt="Project Image">
-                <a href="#"><h3>Project Title 02</h3></a>
-                <p>This is where the project description goes. Give an overview or go in depth - what it's all about, what inspired you, how you created it, or anything else you'd like visitors to know. To add Project descriptions, go to Manage Projects.</p>
-            </div>
-            <div class="project slide delay-5">
-                <img src="./stock/photo.webp" alt="Project Image">
-                <a href="#"><h3>Project Title 03</h3></a>
-                <p>This is where the project description goes. Give an overview or go in depth - what it's all about, what inspired you, how you created it, or anything else you'd like visitors to know. To add Project descriptions, go to Manage Projects.</p>
-            </div>
-            <div class="project slide delay-6">
-                <img src="./stock/photo.webp" alt="Project Image">
-                <a href="#"><h3>Project Title 04</h3></a>
-                <p>This is where the project description goes. Give an overview or go in depth - what it's all about, what inspired you, how you created it, or anything else you'd like visitors to know. To add Project descriptions, go to Manage Projects.</p>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <h1>Hi, I'm Kanav Gathe</h1>
+            <p>DevOps Engineer</p>
+            <div class="cta">
+                <a href="#projects" class="btn primary-btn">Explore My Work</a>
+                <a href="#contact" class="btn secondary-btn">Contact Me</a>
             </div>
         </div>
-    </div>
-    <footer class="slide delay-7" id="page1">
-            <a href="./about.html"><span>About</span></a>
-            <a href="https://drive.google.com/file/d/1YGcKNu7iOayrdzBg-BfmBYTXcfU_IPVj/view?usp=sharing" target="_blank"><span>Resume</span></a>
-            <a href="https://www.instagram.com/gathe_kanav" target="_blank"><img src="/Stock/instagram-line.svg"></a>
-            <a href="https://www.linkedin.com/in/gathekanav/" target="_blank"><img src="/Stock/linkedin-line.svg"></a>
-            <a href="mailto:gathkanav@gmail.com" target="_blank"><img src="/Stock/mail-fill.svg"></a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container projects-container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Is This Laptop Good for You?</h3>
+                    <p>A web app deployed on AWS, consisting of:
+                        <ul>
+                            <li>Web crawler spider to fetch data from Amazon.</li>
+                            <li>Data parser and visualization app for manual data review.</li>
+                            <li>AI-powered React frontend to suggest top laptops based on user inputs.</li>
+                        </ul>
+                    </p>
+                    <div class="technologies">
+                        <img src="stock/logos/aws.svg" alt="AWS">
+                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
+                        <img src="stock/logos/react.svg" alt="React">
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Online Compiler</h3>
+                    <p>An online compiler deployed on AWS, enabling users to compile code online. Includes CI/CD pipelines for deployment.</p>
+                    <div class="technologies">
+                        <img src="stock/logos/aws.svg" alt="AWS">
+                        <img src="stock/logos/docker.svg" alt="Docker">
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SlayerK15/Online-Compiler.git" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Quotes App</h3>
+                    <p>A quotes application that:
+                        <ul>
+                            <li>Searches through 50,000 quotes based on authors.</li>
+                            <li>Features a random quote of the day.</li>
+                            <li>Deployed as a Docker container on an AWS EC2 instance.</li>
+                        </ul>
+                    </p>
+                    <div class="technologies">
+                        <img src="stock/logos/aws.svg" alt="AWS">
+                        <img src="stock/logos/docker.svg" alt="Docker">
+                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SlayerK15/QuoteApp.git" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3>DevOps Tools Installer</h3>
+                    <p>Bash-based scripts that make installing all major DevOps tools quick and easy.</p>
+                    <div class="technologies">
+                        <img src="stock/logos/linux.svg" alt="Linux">
+                        <img src="stock/logos/bash.svg" alt="Bash">
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SlayerK15/Scripts.git" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <h3>Task Manager App</h3>
+                    <p>A to-do application with MongoDB integration, used for testing Grafana and Prometheus real-time monitoring during the 90DaysOfDevOps challenge.</p>
+                    <div class="technologies">
+                        <img src="stock/logos/aws.svg" alt="AWS">
+                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
+                        <img src="stock/logos/grafana.svg" alt="Grafana">
+                        <img src="stock/logos/prometheus.svg" alt="Prometheus">
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SlayerK15/Task-Manager.git" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <h3>Medusa Backend</h3>
+                    <p>Created and deployed the backend for Medusa during an internship, leveraging AWS for deployment.</p>
+                    <div class="technologies">
+                        <img src="stock/logos/aws.svg" alt="AWS">
+                        <img src="stock/logos/medusa.svg" alt="Medusa">
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SlayerK15/MedusaBackendLocal.git" class="btn project-btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="stock/images/profile.jpg" alt="Kanav Gathe" class="profile-img">
+                <p>
+                    I am a dedicated DevOps engineer with expertise in cloud technologies, CI/CD pipelines, and
+                    infrastructure automation. My goal is to streamline operations and enhance efficiency using modern
+                    DevOps practices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container skills-container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <img src="stock/logos/aws.svg" alt="AWS" class="skill-logo">
+                    <p>AWS</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/docker.svg" alt="Docker" class="skill-logo">
+                    <p>Docker</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/kubernetes.svg" alt="Kubernetes" class="skill-logo">
+                    <p>Kubernetes</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/terraform.svg" alt="Terraform" class="skill-logo">
+                    <p>Terraform</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/jenkins.svg" alt="Jenkins" class="skill-logo">
+                    <p>Jenkins</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/linux.svg" alt="Linux" class="skill-logo">
+                    <p>Linux</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/git.svg" alt="Git" class="skill-logo">
+                    <p>Git</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/prometheus.svg" alt="Prometheus" class="skill-logo">
+                    <p>Prometheus</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/grafana.svg" alt="Grafana" class="skill-logo">
+                    <p>Grafana</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/bash.svg" alt="Bash" class="skill-logo">
+                    <p>Bash</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/python.svg" alt="Python" class="skill-logo">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/java.svg" alt="Java" class="skill-logo">
+                    <p>Java</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/c.svg" alt="C" class="skill-logo">
+                    <p>C</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/django.svg" alt="Django" class="skill-logo">
+                    <p>Django</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/flask.svg" alt="Flask" class="skill-logo">
+                    <p>Flask</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/html.svg" alt="HTML" class="skill-logo">
+                    <p>HTML</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/css.svg" alt="CSS" class="skill-logo">
+                    <p>CSS</p>
+                </div>
+                <div class="skill">
+                    <img src="stock/logos/javascript.svg" alt="JavaScript" class="skill-logo">
+                    <p>JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn primary-btn">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 Kanav Gathe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
+
 </body>
+
 </html>
