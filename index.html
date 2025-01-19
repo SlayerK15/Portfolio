@@ -2,273 +2,402 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanav Gathe | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- --------- UNICONS ---------- -->
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+   <!-- font awsomes -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- --------- CSS ---------- -->
+   <link rel="stylesheet" href="./styles.css">
+
+   <!-- --------- FAVICON ---------- -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+   <!-- --------- EMAILJS ---------- -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+   <title>Portfolio | Kanav Gathe</title>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">Kanav Gathe</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+   <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+         <div class="nav-logo">
+            <p class="nav-name">Kanav Gathe</p>
+            <span>.</span>
+         </div>
+         <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+               <li class="nav_list">
+                  <a href="#home" class="nav-link active-link">Home</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#about" class="nav-link">Tech Stack</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#projects" class="nav-link">Projects</a>
+                  <div class="circle"></div>
+               </li>
+               <li class="nav_list">
+                  <a href="#contact" class="nav-link">Contact</a>
+                  <div class="circle"></div>
+               </li>
+            </ul>
+         </div>
+         <div class="nav-button">
+            <button class="btn" id="cvButton" onclick="handleCvClick()">Download CV<i class="uil uil-file-alt"></i></button>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <h1>Hi, I'm Kanav Gathe</h1>
-            <p>DevOps Engineer</p>
-            <div class="cta">
-                <a href="#projects" class="btn primary-btn">Explore My Work</a>
-                <a href="#contact" class="btn secondary-btn">Contact Me</a>
+         </div>
+         <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+         </div>
+      </nav>
+
+
+      <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+         <!-- -------------- FEATURED BOX ---------------- -->
+         <section class="featured-box" id="home">
+            <div class="featured-text">
+               <div class="featured-text-card">
+                  <span>Kanav Gathe</span>
+               </div>
+               <div class="featured-name">
+                  <p>I'm <span class="typedText"></span></p>
+               </div>
+               <div class="featured-text-info">
+                  <p>I am a dedicated DevOps engineer with expertise in cloud technologies, CI/CD pipelines, and infrastructure automation. My goal is to streamline operations and enhance efficiency using modern DevOps practices.
+
+                  </p>
+               </div>
+               <div class="featured-text-btn">
+                  <button class="btn blue-btn">Hire Me</button>
+                  <button class="btn" id="cvButton" onclick="handleCvClick()">Download CV<i class="uil uil-file-alt"></i></button>
+               </div>
+               <div class="social_icons">
+                  <div class="icon"><a href="https://www.instagram.com/gathe_kanav/"><i class="uil uil-instagram"></a></i></div>
+                  <div class="icon"><a href="https://www.linkedin.com/in/gathekanav/"><i class="uil uil-linkedin-alt"></a></i></div>
+                  <div class="icon"><a href="https://x.com/gathe_kanav"><i class="fa-brands fa-x-twitter"></a></i></div>
+                  <div class="icon"><a href="https://github.com/SlayerK15"><i class="uil uil-github-alt"></a></i></div>
+               </div>
             </div>
-        </div>
-    </section>
+            <div class="featured-image">
+               <div class="image">
+                  <img src="./images/profile.jpg" alt="avatar">
+               </div>
+            </div>
+            <div class="scroll-icon-box">
+               <a href="#about" class="scroll-btn">
+                  <i class="uil uil-mouse-alt"></i>
+                  <p>Scroll Down</p>
+               </a>
+            </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container projects-container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <h3>Is This Laptop Good for You?</h3>
-                    <p>A web app deployed on AWS, consisting of:
-                        <ul>
-                            <li>Web crawler spider to fetch data from Amazon.</li>
-                            <li>Data parser and visualization app for manual data review.</li>
-                            <li>AI-powered React frontend to suggest top laptops based on user inputs.</li>
-                        </ul>
-                    </p>
-                    <div class="technologies">
-                        <img src="stock/logos/aws.svg" alt="AWS">
-                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
-                        <img src="stock/logos/react.svg" alt="React">
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+         </section>
+         <!-- -------------- ABOUT BOX ---------------- -->
+         <section class="section" id="about">
+            <div class="top-header">
+               <h1>Tech Stack</h1>
+            </div>
+            <div class="row">
+               <div class="col">
+                  <div class="about-info">
+                     <img src="./images/aws.svg" alt="">
+                     <img src="./images/docker.svg" alt="">
+                     <img src="./images/kubernetes.svg" alt="">
+                     <img src="./images/terraform.svg" alt="">
+                     <img src="./images/jenkins.svg" alt="">
+                     <img src="./images/linux.svg" alt="">
+                     <img src="./images/git.svg" alt="">
+                     <img src="./images/prometheus.svg" alt="">
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <h3>Online Compiler</h3>
-                    <p>An online compiler deployed on AWS, enabling users to compile code online. Includes CI/CD pipelines for deployment.</p>
-                    <div class="technologies">
-                        <img src="stock/logos/aws.svg" alt="AWS">
-                        <img src="stock/logos/docker.svg" alt="Docker">
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/SlayerK15/Online-Compiler.git" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+                     <img src="./images/grafana.svg" alt="">
+                     <img src="./images/bash.svg" alt="">
+                     <img src="./images/python.svg" alt="">
+                     <img src="./images/java.svg" alt="">
+                     <img src="./images/c.svg" alt="">
+                     <img src="./images/html.svg" alt="">
+                     <img src="./images/css.svg" alt="">
+                     <img src="./images/javascript.svg" alt="">
+                     <img src="./images/django.svg" alt="">
+                     <img src="./images/flask.svg" alt="">
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <h3>Quotes App</h3>
-                    <p>A quotes application that:
-                        <ul>
-                            <li>Searches through 50,000 quotes based on authors.</li>
-                            <li>Features a random quote of the day.</li>
-                            <li>Deployed as a Docker container on an AWS EC2 instance.</li>
-                        </ul>
-                    </p>
-                    <div class="technologies">
-                        <img src="stock/logos/aws.svg" alt="AWS">
-                        <img src="stock/logos/docker.svg" alt="Docker">
-                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/SlayerK15/QuoteApp.git" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+                     
+                     
 
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <h3>DevOps Tools Installer</h3>
-                    <p>Bash-based scripts that make installing all major DevOps tools quick and easy.</p>
-                    <div class="technologies">
-                        <img src="stock/logos/linux.svg" alt="Linux">
-                        <img src="stock/logos/bash.svg" alt="Bash">
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/SlayerK15/Scripts.git" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+                    
+                     
+                  </div>
+               </div>
+               
+            </div>
+         </section>
 
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <h3>Task Manager App</h3>
-                    <p>A to-do application with MongoDB integration, used for testing Grafana and Prometheus real-time monitoring during the 90DaysOfDevOps challenge.</p>
-                    <div class="technologies">
-                        <img src="stock/logos/aws.svg" alt="AWS">
-                        <img src="stock/logos/mongodb.svg" alt="MongoDB">
-                        <img src="stock/logos/grafana.svg" alt="Grafana">
-                        <img src="stock/logos/prometheus.svg" alt="Prometheus">
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/SlayerK15/Task-Manager.git" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+         <!-- -------------- PROJECT BOX ---------------- -->
+             <!--! Card wala division -->
+         <section class="section" id="projects">
+            <div class="top-header">
+               <h1>Projects</h1>
+            </div>
+            <div class="project-container">
+                <!-- !1st -->
+               <div class="project-box">
+                  <h3>Is This Laptop Good for You?
+                  </h3>
+                  <label>
+                     <h4>A web app deployed on AWS, consisting of:</h4>
+                     <ul><li>Web crawler spider to fetch data from Amazon.</li>
+                        <li>Data parser and visualization app for manual data review.</li>
+                        <li>AI-powered React frontend to suggest top laptops based on user inputs.</li></ul>
+                  </label>
+                  <div class="icons_Edited">
+                     <img src="./logos/aws.svg" alt="">
+                     <img src="./logos/mongodb.svg" alt="">
+                     <img src="./logos/react.svg" alt="">
+                  </div>
+                  <a class="mayaButton" href="google.com">
 
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <h3>Medusa Backend</h3>
-                    <p>Created and deployed the backend for Medusa during an internship, leveraging AWS for deployment.</p>
-                    <div class="technologies">
-                        <img src="stock/logos/aws.svg" alt="AWS">
-                        <img src="stock/logos/medusa.svg" alt="Medusa">
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/SlayerK15/MedusaBackendLocal.git" class="btn project-btn secondary-btn">GitHub</a>
-                    </div>
-                </div>
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
+               <!-- !2nd -->
+               <div class="project-box">
+                  <h3> Online Compiler Infrastructure 
+
+
+                  </h3>
+                  <label>
+                     <h4>An online compiler deployed on AWS ECS</h4>
+                     <ul>
+                        <li>
+                           Automated deployment and destruction workflows with GitHub Actions.
+
+                        </li>
+                        <li>Secure infrastructure setup with VPC, ECS, IAM, and CloudWatch integration.</li>
+                        
+                     </ul>
+
+
+                  </label>
+                  <div class="icons_Edited">
+                    <img src="./logos/aws.svg" alt="">
+                    <img src="./logos/docker.svg" alt="">
+                  </div>
+                  <a class="mayaButton" href="https://github.com/SlayerK15/Online-Compiler
+                  ">
+
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
+               <!-- !3rd -->
+               <div class="project-box">
+                  <h3>React Quotes App On EC2
+
+                  </h3>
+                  <label>
+                     <h4>A quotes application that
+                        :</h4>
+                     <ul>
+                        <li>Searches through 50,000 quotes based on authors.</li>
+                        <li>Features a random quote of the day.</li>
+                        <li>Deployed as a Docker container on an AWS EC2 instance.</li>
+
+                     </ul>
+                  </label>
+                  <div class="icons_Edited">
+                    <img src="./logos/aws.svg" alt="">
+                    <img src="./logos/mongodb.svg" alt="">
+                    <img src="./logos/docker.svg" alt="">
+
+                  </div>
+                  <a class="mayaButton" href="https://github.com/SlayerK15/QuoteApp
+                  ">
+
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
+               <!-- !4th -->
+
+               <div class="project-box">
+                  <h3>DevOps Tools Installation Suite
+
+                  </h3>
+                  <label>
+                     <h4>Comprehensive scripts for installing popular DevOps tools</h4>
+                    <ul>
+                     <li> 
+                        Features include dependency resolution, logging, and clean/force installation options.
+                        </li>
+                        <li>Supports tools like Docker, Jenkins, Kubernetes, Minikube, and Terraform.</li>
+                    </ul>
+
+                  </label>
+                  <div class="icons_Edited">
+                    <img src="./logos/bash.svg" alt="">
+                    <img src="./logos/linux.svg" alt="">
+                  </div>
+                  <a class="mayaButton" href="https://github.com/SlayerK15/Scripts
+                  ">
+
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
+               <!-- !5th -->
+
+               <div class="project-box">
+                  <h3>Simple Task Manager
+
+                  </h3>
+                  <label>
+                     <h4>A minimalist task management application </h4>
+                     <ul>
+                        <li>Built with Flask and MongoDB, containerized using Docker.</li>
+                        
+                        <li>Features a clean interface for adding and viewing tasks</li>
+                        <li>includes Grafana Dashboard and Jenkinsfile integration for enhanced monitoring and CI/CD support.</li>                           
+
+                       
+                     </ul>
+                  </label>
+                  <div class="icons_Edited">
+                     <img src="./logos/aws.svg" alt="">
+                     <img src="./logos/mongodb.svg" alt="">
+                     <img src="./logos/grafana.svg" alt="">
+                     <img src="./logos/prometheus.svg" alt="">
+                  </div>
+                  <a class="mayaButton" href="https://github.com/SlayerK15/Task-Manager
+                  ">
+
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
+               <!-- !6th -->
+
+               <div class="project-box">
+                  <h3>AWS S3 Website Hosting
+                  </h3>
+                  <label>
+                     <h4>Automated deployment of a static website on AWS S3 with website hosting enabled.</h4>
+                      
+                     <ul>
+                        <li>Utilizes GitHub Actions for seamless CI/CD to sync updates on code changes.  
+                            
+                           </li>
+                           <li>Supports efficient, scalable, and cost-effective static content delivery. </li>
+                           <li>Ideal for hosting personal portfolios, blogs, or static web pages.</li>
+                     </ul>
+                  </label>
+                  <div class="icons_Edited">
+                    <img src="./logos/aws.svg" alt="">
+                    
+                  </div>
+                  <a class="mayaButton" href="google.com">
+
+                     <button class="card-button">Github</button>
+                  </a>
+
+               </div>
 
             </div>
-        </div>
-    </section>
+         </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="stock/images/profile.jpg" alt="Kanav Gathe" class="profile-img">
-                <p>
-                    I am a dedicated DevOps engineer with expertise in cloud technologies, CI/CD pipelines, and
-                    infrastructure automation. My goal is to streamline operations and enhance efficiency using modern
-                    DevOps practices.
-                </p>
+         <!-- -------------- CONTACT BOX ---------------- -->
+        <section class="section" id="contact">
+            <div class="top-header">
+                <h1>Get in touch</h1>
+                <span>Do you have a project in your mind, contact me here</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container skills-container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <img src="stock/logos/aws.svg" alt="AWS" class="skill-logo">
-                    <p>AWS</p>
+            <div class="row">
+                <div class="col">
+                    <div class="contact-info">
+                        <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                        <p><i class="uil uil-envelope"></i> Email: gathekanav@gmail.com</p>
+                        <p><i class="uil uil-phone"></i> Tel: +91 8999816954</p>
+                    </div>
                 </div>
-                <div class="skill">
-                    <img src="stock/logos/docker.svg" alt="Docker" class="skill-logo">
-                    <p>Docker</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/kubernetes.svg" alt="Kubernetes" class="skill-logo">
-                    <p>Kubernetes</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/terraform.svg" alt="Terraform" class="skill-logo">
-                    <p>Terraform</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/jenkins.svg" alt="Jenkins" class="skill-logo">
-                    <p>Jenkins</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/linux.svg" alt="Linux" class="skill-logo">
-                    <p>Linux</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/git.svg" alt="Git" class="skill-logo">
-                    <p>Git</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/prometheus.svg" alt="Prometheus" class="skill-logo">
-                    <p>Prometheus</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/grafana.svg" alt="Grafana" class="skill-logo">
-                    <p>Grafana</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/bash.svg" alt="Bash" class="skill-logo">
-                    <p>Bash</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/python.svg" alt="Python" class="skill-logo">
-                    <p>Python</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/java.svg" alt="Java" class="skill-logo">
-                    <p>Java</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/c.svg" alt="C" class="skill-logo">
-                    <p>C</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/django.svg" alt="Django" class="skill-logo">
-                    <p>Django</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/flask.svg" alt="Flask" class="skill-logo">
-                    <p>Flask</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/html.svg" alt="HTML" class="skill-logo">
-                    <p>HTML</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/css.svg" alt="CSS" class="skill-logo">
-                    <p>CSS</p>
-                </div>
-                <div class="skill">
-                    <img src="stock/logos/javascript.svg" alt="JavaScript" class="skill-logo">
-                    <p>JavaScript</p>
+                <div class="col">
+                    <form id="contactForm" class="form-control">
+                        <div class="form-inputs">
+                            <input type="text" name="from_name" class="input-field" placeholder="Name" required>
+                            <input type="email" name="reply_to" class="input-field" placeholder="Email" required>
+                        </div>
+                        <div class="text-area">
+                            <textarea name="message" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" class="btn" id="sendButton">
+                                Send <i class="uil uil-message"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+ 
+  
+      </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container contact-container">
-            <h2>Contact Me</h2>
-            <form action="#" method="POST" class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+      <!-- --------------- FOOTER --------------- -->
+      <footer>
+         <div class="top-footer">
+            <p>Kanav Gathe</p>
+         </div>
+         <div class="middle-footer">
+            <ul class="footer-menu">
+               <li class="footer_menu_list">
+                  <a href="#home">Home</a>
+               </li>
+               <li class="footer_menu_list">
+                  <a href="#about">About</a>
+               </li>
+               <li class="footer_menu_list">
+                  <a href="#projects">Projects</a>
+               </li>
+               <li class="footer_menu_list">
+                  <a href="#contact">Contact</a>
+               </li>
+            </ul>
+         </div>
+         <div class="footer-social-icons">
+            <div class="icon"><a href="https://www.instagram.com/gathe_kanav/"><i class="uil uil-instagram"></a></i></div>
+            <div class="icon"><a href="https://www.linkedin.com/in/gathekanav/"><i class="uil uil-linkedin-alt"></a></i></div>
+            <div class="icon"><a href="https://x.com/gathe_kanav"><i class="fa-brands fa-x-twitter"></a></i></div>
+            <div class="icon"><a href="https://github.com/SlayerK15"><i class="uil uil-github-alt"></a></i></div>
+         </div>
+         <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Kanav Gathe</a> - All rights reserved</p>
+         </div>
+      </footer>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+   </div>
 
-                <button type="submit" class="btn primary-btn">Send</button>
-            </form>
-        </div>
-    </section>
+   <!-- lenis -->
+   <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2025 Kanav Gathe. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
+   <!-- ----- TYPING JS Link ----- -->
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
+   <!-- ----- SCROLL REVEAL JS Link----- -->
+   <script src="https://unpkg.com/scrollreveal"></script>
+
+   <!-- ----- MAIN JS ----- -->
+   <script src="script.js"></script>
 </body>
 
 </html>
