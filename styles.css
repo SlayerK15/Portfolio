@@ -561,6 +561,50 @@ footer{
     margin-top: 10px;
 }
 
+/* !edit */
+.icons_Edited img{
+    margin-bottom: 28px;
+ }
+ .icons_Edited{
+    width: 100%;
+    display: flex;
+    align-items: center ;
+    justify-content: start;
+    gap: 1.2VW;
+    padding-left: 20px
+ 
+ }
+ 
+ .mayaButton{
+    z-index: 100;
+    padding-bottom: 1vw ;
+    padding-left: 20px;
+ }
+  .card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #c3c3c3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+  }
+  
+ .card-button:hover {
+    background: var(--color-white);
+  }
+ 
+ 
+  a {
+     color: inherit; /* Takes color from parent element */
+     text-decoration: none; /* Removes underline */
+ }
+
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
@@ -626,21 +670,26 @@ footer{
         margin-top: 65px;
     }
     .image, .image img{
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     .row{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 50px;
+        gap: 25px;
     }
     .col{
+        height: fit-content;
         display: flex;
         justify-content: center;
         width: 100%;
     }
-    .about-info, .contact-info{
+    .about-info{
+        width: 100%;
+        height: fit-content;
+    }
+    .contact-info{
         width: 100%;
     }
     .project-container{
@@ -649,6 +698,26 @@ footer{
     .project-box{
         width: 80%;
     }
+    .section {
+        padding-block: 3em;
+    }
+    .about-info>img {
+        width: 50px;
+        height: 50px;
+    }
+    .icons_Edited{
+        width: 100%;
+        display: flex;
+        align-items: center ;
+        justify-content: start;
+        gap: 25px;
+        padding-left: 20px
+     }
+     .mayaButton {
+        z-index: 100;
+        padding-bottom: 5vw;
+        padding-left: 7rem;
+    }
 
 }
 
@@ -656,7 +725,7 @@ footer{
 
 @media only screen and (max-width: 540px){
     .featured-name{
-        font-size: 40px;
+        font-size: 35px;
     }
     .project-box{
         width: 100%;
@@ -676,46 +745,6 @@ footer{
 
 
 
-/* !edit */
-.icons_Edited img{
-   margin-bottom: 28px;
-}
-.icons_Edited{
-   width: 100%;
-   display: flex;
-   align-items: center ;
-   justify-content: start;
-   gap: 1.2VW;
-   padding-left: 20px
-
-}
-
-.mayaButton{
-   z-index: 100;
-   padding-bottom: 1vw ;
-   padding-left: 20px;
-}
- .card-button {
-   display: inline-block;
-   padding: 10px 20px;
-   font-size: 1rem;
-   color: #fff;
-   background: #c3c3c3;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   text-align: center;
-   text-decoration: none;
-   transition: background-color 0.3s ease;
-   z-index: 100;
- }
- 
-.card-button:hover {
-   background: var(--color-white);
- }
 
 
- a {
-    color: inherit; /* Takes color from parent element */
-    text-decoration: none; /* Removes underline */
-}
+
