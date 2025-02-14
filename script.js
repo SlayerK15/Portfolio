@@ -149,5 +149,157 @@ document.addEventListener("DOMContentLoaded", function() {
               sendButton.disabled = false;
               sendButton.innerHTML = 'Send <i class="uil uil-message"></i>';
           });
-  });
+  });  
+});
+
+/* ----- CHATBOT FUNCTIONALITY ----- */
+
+// Chat Widget Initialization and Visibility
+document.addEventListener('DOMContentLoaded', () => {
+    const chatWidget = document.getElementById('chatWidget');
+    const chatToggleBtn = document.getElementById('chatToggleBtn');
+    const projectsSection = document.getElementById('projects');
+
+    // Initially hide the chat button
+    if (chatToggleBtn) {
+        chatToggleBtn.style.display = 'none';
+    }
+
+    // Function to check if element is in viewport
+    function isElementInViewport(el) {
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+    // Show chat button when scrolling to projects section
+    function handleScroll() {
+        if (projectsSection && chatToggleBtn && isElementInViewport(projectsSection)) {
+            chatToggleBtn.style.display = 'flex';
+            chatToggleBtn.classList.add('fade-in');
+        }
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check
+    handleScroll();
+
+    // Prevent page scroll when scrolling chat
+    const chatMessages = document.getElementById('chatMessages');
+    if (chatMessages) {
+        chatMessages.addEventListener('wheel', (event) => {
+            if (chatMessages.contains(event.target)) {
+                event.stopPropagation();
+            }
+        }, { passive: false });
+    }
+});
+
+// Toggle Chat Widget
+function toggleChat() {
+    const chatWidget = document.getElementById('chatWidget');
+    if (chatWidget) {
+        chatWidget.classList.toggle('open');
+    }
+}
+
+// Show/Hide typing indicator
+function showTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+        typingIndicator.style.display = 'block';
+        const chatMessages = document.getElementById('chatMessages');
+        if (chatMessages) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+}
+
+function hideTypingIndicator() {
+    const typingIndicator = document.getElementById('typingIndicator');
+    if (typingIndicator) {
+        typingIndicator.style.display = 'none';
+    }
+}
+
+// Format Chat Messages - One sentence per line
+function formatMessage(message) {
+    const sentences = message.split(/(?<=[.!?])\s+/);
+    return sentences.filter(s => s.trim()).join('\n');
+}
+
+// Add Message to Chat
+function addMessage(message, isUser = false) {
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+    
+    const formattedMessage = formatMessage(message);
+    messageDiv.textContent = formattedMessage;
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Send Message
+async function sendMessage() {
+    const chatInput = document.getElementById('chatInput');
+    if (!chatInput) return;
+
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    addMessage(message, true);
+    chatInput.value = '';
+    showTypingIndicator();
+
+    try {
+        const response = await fetch('http://35.154.90.195:5000/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                message,
+                maxLength: 150
+            })
+        });
+
+        hideTypingIndicator();
+
+        const data = await response.json();
+        if (data.status === 'success') {
+            addMessage(data.response);
+        } else {
+            addMessage('Error: Could not get response');
+        }
+    } catch (error) {
+        hideTypingIndicator();
+        addMessage('Error: Could not connect to server');
+    }
+}
+
+// Handle Enter Key Press
+document.addEventListener('DOMContentLoaded', () => {
+    const chatInput = document.getElementById('chatInput');
+    const chatToggleBtn = document.getElementById('chatToggleBtn');
+
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    if (chatToggleBtn) {
+        chatToggleBtn.addEventListener('click', toggleChat);
+    }
 });

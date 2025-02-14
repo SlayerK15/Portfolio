@@ -387,6 +387,33 @@
 
    </div>
 
+   <!-- Chat Widget -->
+   <button class="chat-toggle-btn" id="chatToggleBtn">
+      <i class="uil uil-comments"></i>
+   </button>
+
+   <div class="chat-widget" id="chatWidget">
+      <div class="chat-header">
+         <h3>Ask me anything about Kanav!</h3>
+         <button class="close-btn" onclick="toggleChat()">
+            <i class="uil uil-times"></i>
+         </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+         <div class="message bot-message">Hi! I can help you learn more about Kanav's experience and projects. What would you like to know?
+         </div>
+      </div>
+      <div class="typing-indicator" id="typingIndicator">
+         <div class="typing-dot"></div>
+      </div>
+      <div class="chat-input-container">
+         <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+         <button class="chat-send-btn" onclick="sendMessage()">
+            <i class="uil uil-message"></i>
+         </button>
+      </div>
+   </div>
+
    <!-- lenis -->
    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
 
