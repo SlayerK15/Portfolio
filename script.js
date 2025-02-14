@@ -261,7 +261,7 @@ async function sendMessage() {
     showTypingIndicator();
 
     try {
-        const response = await fetch('http://35.154.90.195:5000/', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
