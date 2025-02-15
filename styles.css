@@ -738,6 +738,12 @@ footer{
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .featured-name {
+        font-size: 30px;
+    }
+}
+
 /* Chat Widget Animation */
 @keyframes fadeIn {
     from {
